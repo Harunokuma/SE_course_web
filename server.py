@@ -1,3 +1,4 @@
+#_*_ coding:utf-8 _*_
 from flask import Flask, jsonify, redirect, url_for, request
 app = Flask(__name__)
 
