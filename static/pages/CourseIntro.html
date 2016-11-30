@@ -63,12 +63,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li class="active">Course Introduction</li>
         </ol>
       </section>
-
       <!-- Main content -->
+
       <section class="content">
       <!-- load by js  -->
       </section>
       <!-- /.content --> 
+      
     </div>
     <!-- /.content-wrapper -->
 
@@ -92,7 +93,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- template -->
   <script src="../../static/dist/js/template.js"></script>
-  <script src="../../static/js/CourseIntro.js"></script>
+  <script src="../../static/js/Intro.js"></script>
 </body>
 </html>
 
@@ -103,30 +104,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="col-md-12">
       <div class="box box-solid">
         <div class="box-body">
-          <div id="carousel-course" class="carousel slide" data-ride="carousel">
+          <div id="carousel-intro" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-              {{each list as data i}} {{if i == 0}}
-              <li data-target="#carousel-course" data-slide-to="page{{i}}" class="active"></li>
+              {{each introList as intro i}} 
+              {{if i == 0}}
+              <li data-target="#carousel-intro" data-slide-to="page{{i}}" class="active"></li>
               {{else}}
-              <li data-target="#carousel-course" data-slide-to="page{{i}}"></li>
-              {{/if}} {{/each}}
+              <li data-target="#carousel-intro" data-slide-to="page{{i}}"></li>
+              {{/if}} 
+              {{/each}}
             </ol>
             <div class="carousel-inner">
-              {{each list as data i}} {{if i == 0}}
+              {{each introList as intro i}} 
+              {{if i == 0}}
               <div class="item active">
                 {{else}}
                 <div class="item">
                   {{/if}}
                   <a href="#page{{i}}">
-                    <img src="../../static/src/neko{{i+1}}.jpg" alt="{{data.title}}" class="center-block">
-                    <div class="carousel-caption">{{data.title}}</div>
+                    <img src="{{intro.srcOfPic}}" alt="{{intro.name}}" class="center-block">
+                    <div class="carousel-caption">{{intro.name}}</div>
                   </a>
                 </div>
                 {{/each}}
-                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <a class="left carousel-control" href="#carousel-intro" data-slide="prev">
                   <span class="fa fa-angle-left"></span>
                 </a>
-                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <a class="right carousel-control" href="#carousel-intro" data-slide="next">
                   <span class="fa fa-angle-right"></span>
                 </a>
               </div>
@@ -136,33 +140,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- /.box -->
         </div>
         <!-- /.col -->
-        {{each list as data i}}
+        {{each introList as intro i}}
         <div class="col-md-13">
           <div class="box box-solid">
             <div class="box-header with-border"> <i class="fa fa-book"></i>
               <a name="page{{i}}"></a>
-              <h3 class="box-title">{{data.title}}</h3>
+              <h3 class="box-title">{{intro.name}}</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
-              <br> {{data.content}}
+              {{intro.content}}
+              <br>{{intro.content}}
+              <br>{{intro.content}}
+              <br>{{intro.content}}
+              <br>{{intro.content}}
+              <br>{{intro.content}}
+              <br>{{intro.content}}
+              <br>{{intro.content}}
+              <br>{{intro.content}}
+              <br>{{intro.content}}
+              <br>{{intro.content}}
+              <br>{{intro.content}}
+              <br>{{intro.content}}
+              <br>{{intro.content}}
               <br>
             </div>
             <!-- /.box-body -->
