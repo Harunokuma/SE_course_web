@@ -1,3 +1,9 @@
+(function isLogin()
+{
+	if(localStorage.getItem("ID") != null)
+      window.location.href = "../CourseIntro/"
+}())
+
 $("#submit").click(function()
 {
 	var userID = $("[type='text']").val();
@@ -25,3 +31,4 @@ $("#submit").click(function()
 		
 	});
 });
+

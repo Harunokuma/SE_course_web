@@ -81,147 +81,8 @@ desired effect
 
       <!-- Main content -->
       <section class="content">
-        <div class="row">
-
-          <div class="col-md-12">
-            <div class="box box-primary">
-              <div class="box-header with-border">
-                <h3 class="box-title">板块</h3>
-
-                <div class="box-tools pull-right">
-                  <button type="button" class="btn btn-box-tool" data-widget="collapse"> <i class="fa fa-minus"></i>
-                  </button>
-
-                </div>
-              </div>
-              <!-- /.box-header -->
-              <div class="box-body">
-                <ul class="products-list product-list-in-box">
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="../../static/set/dist/img/default-50x50.gif" alt="Product Image"></div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">
-                        软件工程管理
-                        <span class="product-description">邢卫老师 周三3.4.5节</span>
-                      </a>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="../../static/set/dist/img/default-50x50.gif" alt="Product Image"></div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">
-                        软件需求工程
-                        <span class="product-description">刘玉生老师 周五3.4.5节</span>
-                      </a>
-                    </div>
-                  </li>
-                  <!-- /.item --> </ul>
-              </div>
-              <!-- /.box-body --> </div>
-            <!-- /.box -->
-
-            <div class="box box-info">
-              <div class="box-header with-border">
-                <h3 class="box-title">帖子列表</h3>
-
-                <div class="box-tools pull-right">
-                  <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                    <i class="fa fa-minus"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.box-header -->
-              <div class="box-body">
-                <div class="table-responsive">
-                  <table class="table no-margin">
-                    <thead>
-                      <tr>
-                        <th>帖子名称</th>
-                        <th>发帖人</th>
-                        <th>发布时间</th>
-                        <th>最后回复时间</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-
-                      <tr>
-                        <td>
-                          <a href="../forum">test1</a>
-                        </td>
-                        <td>傅文渊</td>
-                        <td>2016.11.27 00:59</td>
-                        <td>2016.11.27 00:59</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <a href="../forum">test2</a>
-                        </td>
-                        <td>傅文渊</td>
-                        <td>2016.11.27 00:59</td>
-                        <td>2016.11.27 00:59</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <a href="../forum">test3</a>
-                        </td>
-                        <td>傅文渊</td>
-                        <td>2016.11.27 00:59</td>
-                        <td>2016.11.27 00:59</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <a href="../forum">test4</a>
-                        </td>
-                        <td>傅文渊</td>
-                        <td>2016.11.27 00:59</td>
-                        <td>2016.11.27 00:59</td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.table-responsive --> </div>
-              <!-- /.box-body --> </div>
-
-            <div class="box box-info">
-              <div class="box-header ui-sortable-handle" style="cursor: move;">
-                <i class="fa fa-envelope"></i>
-
-                <h3 class="box-title">发布帖子</h3>
-                <!-- tools box -->
-                <div class="pull-right box-tools"></div>
-                <!-- /. tools --> </div>
-              <div class="box-body">
-                <form role="form">
-                  <div class="box-body">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="帖子标题"></div>
-
-                    <!-- textarea -->
-                    <div class="form-group">
-                      <textarea class="form-control" rows="10" placeholder="帖子内容"></textarea>
-                    </div>
-                  </div>
-                  <div class="box-footer clearfix">
-                    <button type="button" class="pull-right btn btn-default" id="sendEmail">
-                      发布
-                      <i class="fa fa-arrow-circle-right"></i>
-                    </button>
-                    <button type="button" onclick="UpFile.click()" class="pull-right btn btn-default" id="attachment">
-                      上传附件
-                      <i class="fa fa-arrow-circle-up"></i>
-                      <input type="file" id="UpFile" onchange="uploadFile()" style="visibility: hidden; position: absolute;">
-                    </button>
-                  </div>
-                </form>
-              </div>
-
-            </div>
-            <!-- /.col-md-12 --> </div>
-          <!-- ./row --> </section>
+      <!-- load by js -->
+      </section>
         <!-- /.content --> </div>
       <!-- /.content-wrapper -->
 
@@ -248,5 +109,121 @@ desired effect
      fixed layout. -->
   <!-- initial -->
   <script src="../../static/js/initial.js"></script>
+  <!-- template -->
+  <script src="../../static/dist/js/template.js"></script>
+  <script src="../../static/js/BBS.js"></script>
 </body>
 </html>
+
+<script id="main_template" type="text/html">
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">板块</h3>
+
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"> <i class="fa fa-minus"></i>
+          </button>
+
+        </div>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <ul class="products-list product-list-in-box">
+          {{each areaList as area i}}
+          <li class="item">
+            <div class="product-img">
+              <img src="../../static/set/dist/img/default-50x50.gif" alt="Product Image"></div>
+            <div class="product-info">
+              <a itype="{{area.areaID}}" href="javascript:void(0)" class="product-title">
+                {{area.areaName}}
+              </a>
+            </div>
+          </li>
+          {{/each}}
+          <!-- /.item -->
+ </ul>
+      </div>
+      <!-- /.box-body --> </div>
+    <!-- /.box -->
+
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <h3 class="box-title">帖子列表</h3>
+
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+        </div>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <div class="table-responsive">
+          <table class="table no-margin">
+            <thead>
+            <tr>
+              <th>帖子名称</th>
+              <th>发帖人</th>
+              <th>发布时间</th>
+              <th>最后回复时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{each forumsList as forums i}}
+            <tr itype="{{forums.forumsID}}">
+              <td>
+                <a href="../forum">{{forums.forumsName}}</a>
+              </td>
+              <td>{{forums.userName}}</td>
+              <td>{{forums.time}}</td>
+              <td>{{forums.lastTime}}</td>
+            </tr>
+            {{/each}}
+
+
+            </tbody>
+          </table>
+        </div>
+        <!-- /.table-responsive --> </div>
+      <!-- /.box-body --> </div>
+
+    <div class="box box-info">
+      <div class="box-header ui-sortable-handle" style="cursor: move;">
+        <i class="fa fa-envelope"></i>
+
+        <h3 class="box-title">发布帖子</h3>
+        <!-- tools box -->
+        <div class="pull-right box-tools"></div>
+        <!-- /. tools --> </div>
+      <div class="box-body">
+        <form role="form">
+          <div class="box-body">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="帖子标题"></div>
+
+            <!-- textarea -->
+            <div class="form-group">
+              <textarea class="form-control" rows="10" placeholder="帖子内容"></textarea>
+            </div>
+          </div>
+          <div class="box-footer clearfix">
+            <button type="button" class="pull-right btn btn-default" id="sendEmail">
+              发布
+              <i class="fa fa-arrow-circle-right"></i>
+            </button>
+            <button type="button" onclick="UpFile.click()" class="pull-right btn btn-default" id="attachment">
+              上传附件
+              <i class="fa fa-arrow-circle-up"></i>
+              <input type="file" id="UpFile" onchange="uploadFile()" style="visibility: hidden; position: absolute;">
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <!-- /.col-md-12 --> </div>
+</div>
+<!-- ./row -->
+</script>

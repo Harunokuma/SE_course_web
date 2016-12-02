@@ -65,99 +65,13 @@ desired effect
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>帖子名称</h1>
-        <ol class="breadcrumb">
-          <li>
-            <a href="#"> <i class="fa fa-dashboard"></i>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="../BBS">BBS</a>
-          </li>
-          <li class="active">Forum</li>
-        </ol>
+        <!-- load by js -->
       </section>
 
       <!-- Main content -->
       <section class="content">
-        <div class="row">
-
-          <div class="col-md-12">
-
-            <div class="box box-solid">
-              <div class="box-header with-border"> <i class="fa fa-male"></i>
-                <a name="First"></a>
-                <h3 class="box-title">傅文渊</h3>
-                <div class="pull-right">
-                  <small>2016.11.27 00:59</small>
-                </div>
-              </div>
-              <!-- /.box-header -->
-              <div class="box-body">
-                <h1>帖子正文</h1>
-                <h1>帖子正文</h1>
-                <h1>帖子正文</h1>
-                <h1>帖子正文</h1>
-                <h1>帖子正文</h1>
-
-              </div>
-              <!-- /.box-body --> </div>
-            <!-- /.box -->
-
-            <div class="box box-solid">
-              <div class="box-header with-border">
-                <i class="fa fa-male"></i>
-                <a name="First"></a>
-                <h3 class="box-title">傅文渊</h3>
-                <div class="pull-right">
-                  <small>2016.11.27 00:59</small>
-                </div>
-
-              </div>
-              <!-- /.box-header -->
-              <div class="box-body">
-                <h1>回帖内容</h1>
-                <h1>回帖内容</h1>
-                <h1>回帖内容</h1>
-                <h1>回帖内容</h1>
-                <h1>回帖内容</h1>
-                <h1>回帖内容</h1>
-              </div>
-              <!-- /.box-body --> </div>
-            <!-- /.box -->
-
-            <div class="box box-info">
-              <div class="box-header ui-sortable-handle" style="cursor: move;">
-                <i class="fa fa-envelope"></i>
-
-                <h3 class="box-title">回复帖子</h3>
-                <!-- tools box -->
-                <div class="pull-right box-tools"></div>
-                <!-- /. tools --> </div>
-              <form role="form">
-                <div class="box-body">
-                  <div class="form-group">
-                    <textarea class="form-control" rows="10" placeholder="Enter ..."></textarea>
-                  </div>
-
-                </div>
-                <div class="box-footer clearfix">
-                  <button type="button" class="pull-right btn btn-default" id="sendEmail">
-                    回复
-                    <i class="fa fa-arrow-circle-right"></i>
-                  </button>
-                  <button type="button" onclick="UpFile.click()" class="pull-right btn btn-default" id="attachment">
-                    上传附件
-                    <i class="fa fa-arrow-circle-up"></i>
-                    <input type="file" id="UpFile" onchange="uploadFile()" style="visibility: hidden; position: absolute;">
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-          <!-- /.col-md-12 --> </div>
-        <!-- ./row --> </section>
+      <!-- load by js -->
+      </section>
       <!-- /.content --> </div>
     <!-- /.content-wrapper -->
 
@@ -183,5 +97,85 @@ desired effect
      fixed layout. -->
   <!-- initial -->
   <script src="../../static/js/initial.js"></script>
+  <!-- template -->
+  <script src="../../static/dist/js/template.js"></script>
+  <script src="../../static/js/forum.js"></script>
 </body>
 </html>
+
+
+<script id="main_template" type="text/html">
+<div class="row">
+
+  <div class="col-md-12">
+    {{each forumList as forum i}}
+    <div class="box box-solid">
+      <div class="box-header with-border"> <i class="fa fa-male"></i>
+        <a name="First"></a>
+        <h3 class="box-title">{{forum.userName}}</h3>
+        <div class="pull-right">
+          <small>{{forum.time}}</small>
+        </div>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <h4>{{forum.content}}</h4>
+        {{if forum.url==""}}
+        {{else}}
+        <br>
+        <h5><a href="{{forum.url}}">附件</a></h5>
+        {{/if}}
+      </div>
+      <!-- /.box-body --> </div>
+    <!-- /.box -->
+    {{/each}}
+
+
+
+    <div class="box box-info">
+      <div class="box-header ui-sortable-handle" style="cursor: move;">
+        <i class="fa fa-envelope"></i>
+
+        <h3 class="box-title">回复帖子</h3>
+        <!-- tools box -->
+        <div class="pull-right box-tools"></div>
+        <!-- /. tools --> </div>
+      <form role="form">
+        <div class="box-body">
+          <div class="form-group">
+            <textarea class="form-control" rows="10" placeholder="Enter ..."></textarea>
+          </div>
+
+        </div>
+        <div class="box-footer clearfix">
+          <button type="button" class="pull-right btn btn-default" id="sendEmail">
+            回复
+            <i class="fa fa-arrow-circle-right"></i>
+          </button>
+          <button type="button" onclick="UpFile.click()" class="pull-right btn btn-default" id="attachment">
+            上传附件
+            <i class="fa fa-arrow-circle-up"></i>
+            <input type="file" id="UpFile" onchange="uploadFile()" style="visibility: hidden; position: absolute;">
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- /.col-md-12 --> </div>
+<!-- ./row -->
+</script>
+
+<script id="title_template" type="text/html">
+<h1>{{forumsName}}</h1>
+<ol class="breadcrumb">
+  <li>
+    <a href="#"> <i class="fa fa-dashboard"></i>
+      Home
+    </a>
+  </li>
+  <li>
+    <a href="../BBS">BBS</a>
+  </li>
+  <li class="active">Forum</li>
+</ol>
+</script>

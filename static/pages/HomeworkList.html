@@ -31,26 +31,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
 
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
@@ -98,10 +78,6 @@ desired effect
   <script src="../../static/set/bootstrap/js/bootstrap.min.js"></script>
   <!-- AdminLTE App -->
   <script src="../../static/set/dist/js/app.min.js"></script>
-  <!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. Slimscroll is required when using the
-     fixed layout. -->
   <!-- initial -->
   <script src="../../static/js/initial.js"></script>
   <!-- template -->
@@ -138,7 +114,7 @@ desired effect
             </div>
             <div id="{{j}}-collapseOne" class="panel-collapse collapse">
               <div class="box-body">
-                {{homework.homeworkIntro}}
+              {{homework.homeworkContent}}
               </div>
               <div class="box-body">
                 <p>End date : {{homework.DDL}}</p>
