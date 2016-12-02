@@ -98,7 +98,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- /.box-header -->
       <div class="box-body">
       {{each cla.homeworkList as homework j}}
-        <div class="box-group" id="accordion{{j}}">
+        <div class="box-group" id="{{i}}-accordion{{j}}">
           <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
           {{if homework.status == 'T'}}
           <div class="panel box box-primary">
@@ -109,10 +109,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
           {{/if}}
             <div class="box-header with-border">
               <h4 class="box-title">
-                <a data-toggle="collapse" data-parent="#accordion{{j}}" href="#{{j}}-collapseOne">{{homework.homeworkName}}</a>
+                <a data-toggle="collapse" data-parent="#{{i}}-accordion{{j}}" href="#{{i}}-collapse{{j}}">{{homework.homeworkName}}</a>
               </h4>
             </div>
-            <div id="{{j}}-collapseOne" class="panel-collapse collapse">
+            <div id="{{i}}-collapse{{j}}" class="panel-collapse collapse">
               <div class="box-body">
               {{homework.homeworkContent}}
               </div>

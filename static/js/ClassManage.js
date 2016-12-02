@@ -17,22 +17,22 @@ $(document).ready(function() {
             group: "1",
             score: "100"
         }, {
-            studentID: "3140103547",
+            studentID: "3140103548",
             name: "傅文渊",
             group: "1",
             score: "100"
         }, {
-            studentID: "3140103547",
+            studentID: "3140103549",
             name: "傅文渊",
             group: "1",
             score: "100"
         }, {
-            studentID: "3140103547",
+            studentID: "3140103540",
             name: "傅文渊",
             group: "1",
             score: "100"
         }, {
-            studentID: "3140103547",
+            studentID: "3140103541",
             name: "傅文渊",
             group: "1",
             score: "100"
@@ -44,9 +44,11 @@ $(document).ready(function() {
         $("div#student_tem").html(template('student_template', data))
         $("#checkAll").click(function() {
             var status = this.checked
-                $("input[type='checkbox']").each(function() {
-                    $(this).attr("checked", status)
-                })
+            var boxs = document.getElementsByName("sub")
+            for (var i = 0; i < boxs.length; i++) {
+                var box = boxs[i]
+                box.checked = status
+            }
         })
     })
 })
