@@ -106,6 +106,36 @@ desired effect
   <script src="../../static/js/Intro.js"></script>
 </body>
 
+<div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="addModalLabel">添加老师介绍</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="CourseName">老师名称</label>
+          <input id="CourseName" type="text" class="form-control" placeholder="">
+          <label for="CourseIntro">老师介绍</label>
+          <textarea id="CourseIntro" rows="10" class="form-control" placeholder=""></textarea>
+          <br>
+          <button type="button" onclick="UpImg.click()" class="btn btn-default">
+            上传图片
+            <i class="fa fa-arrow-circle-up"></i>
+            <input type="file" id="UpImg" onchange="uploadFile()" style="visibility: hidden; position: absolute;">
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </html>
 <!-- content template -->

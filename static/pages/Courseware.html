@@ -85,6 +85,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="../../static/js/CourseMaterial.js"></script>
 </body>
 
+<div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="addModalLabel">添加课件</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="ClassName">班级名称</label>
+          <input id="ClassName" type="text" class="form-control" readonly="readonly">
+          <label for="CourseMaterialName">课件名称</label>
+          <input id="CourseMaterialName" type="text" class="form-control">
+          <br>
+          <button type="button" onclick="UpImg.click()" class="btn btn-default">
+            上传课件
+            <i class="fa fa-arrow-circle-up"></i>
+            <input type="file" id="UpImg" onchange="uploadFile()" style="visibility: hidden; position: absolute;">
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </html>
 <script id="main_template" type="text/html">
   <div class="row">
@@ -94,7 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="box-header with-border">
           <h3 class="box-title">{{cla.className}} {{cla.teacherName}} {{cla.classTime}}</h3>
           <div class="box-tools pull-right">
-            <button itype="{{cla.classID}}" name="MaterialPlus" type="button" class="btn btn-box-tool"> <i class="fa fa-plus-circle"></i>
+            <button data-id="{{cla.classID}}" data-name="{{cla.className}} {{cla.teacherName}} {{cla.classTime}}" name="MaterialPlus" type="button" class="btn btn-box-tool"> <i class="fa fa-plus-circle"></i>
             </button>
             <button type="button" class="btn btn-box-tool" data-widget="collapse"> <i class="fa fa-minus"></i>
             </button>

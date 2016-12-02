@@ -32,9 +32,12 @@ $(document).ready(function() {
             localStorage.removeItem("Name");
             window.location.href = "../Login/";
         });
+
+        //打开模态框
         $("#profile").click(function() {
             $("#mymodal").modal();
         });
+        
         ModifyPage();
     });
 

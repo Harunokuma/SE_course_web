@@ -17,3 +17,7 @@ $(document).ready(function(){
 	template.config('escape', false)
 	$("section.content").html(template('main_template', data))
 })
+
+$("#PlusButton").click(function(){
+	$("#AddModal").modal()
+})

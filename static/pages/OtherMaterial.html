@@ -31,26 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-  <!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
+
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 
@@ -112,6 +93,38 @@ desired effect
   <script src="../../static/dist/js/template.js"></script>
   <script src="../../static/js/CourseMaterial.js"></script>
 </body>
+
+<div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="addModalLabel">添加其他资料</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="ClassName">班级名称</label>
+          <input id="ClassName" type="text" class="form-control" readonly="readonly">
+          <label for="CourseMaterialName">资料名称</label>
+          <input id="CourseMaterialName" type="text" class="form-control">
+          <br>
+          <button type="button" onclick="UpImg.click()" class="btn btn-default">
+            上传资料
+            <i class="fa fa-arrow-circle-up"></i>
+            <input type="file" id="UpImg" onchange="uploadFile()" style="visibility: hidden; position: absolute;">
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </html>
 
 <script id="main_template" type="text/html">
@@ -122,7 +135,7 @@ desired effect
         <div class="box-header with-border">
           <h3 class="box-title">{{cla.className}} {{cla.teacherName}} {{cla.classTime}}</h3>
           <div class="box-tools pull-right">
-            <button itype="{{cla.classID}}" name="MaterialPlus" type="button" class="btn btn-box-tool"> <i class="fa fa-plus-circle"></i>
+            <button data-id="{{cla.classID}}" data-name="{{cla.className}} {{cla.teacherName}} {{cla.classTime}}" name="MaterialPlus" type="button" class="btn btn-box-tool"> <i class="fa fa-plus-circle"></i>
             </button>
             <button type="button" class="btn btn-box-tool" data-widget="collapse"> <i class="fa fa-minus"></i>
             </button>
