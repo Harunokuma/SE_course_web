@@ -50,5 +50,22 @@ $(document).ready(function() {
                 box.checked = status
             }
         })
+        $("[name='StudentPlus']").click(function() {
+            $("#studentAdd").modal();
+        });
+        $("[name='StudentDelete']").click(function() {
+            $("#studentDelete").modal();
+        });
+        $("[name='ChangeGroup']").click(function() {
+            $("#changeGroup").modal();
+        });
+        $("[name='SendMessage']").click(function() {
+            $("#sendMessage").modal();
+        });
     })
+    $("[name='ClassPlus']").click(function() {
+        $("#classAdd").modal();
+    });
+
+
 })

@@ -22,37 +22,7 @@
           <!-- Messages: style can be found in dropdown.less-->    
           <li class="dropdown messages-menu">
             <!-- Menu toggle button -->    
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 4 messages</li>
-              <li>
-                <!-- inner menu: contains the messages -->    
-                <ul class="menu">
-                  <li>
-                    <!-- start message -->    
-                    <a href="#">
-                      <div class="pull-left">
-                        <!-- User ImageB -->    
-                        <img src="../../static/set/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"></div>
-                      <!-- Message title and timestamp -->    
-                      <h4>
-                        Support Team
-                        <small> <i class="fa fa-clock-o"></i>
-                          5 mins
-                        </small>
-                      </h4>
-                      <!-- The message -->    
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <!-- end message --> </ul>
-                <!-- /.menu --> </li>
-              <li class="footer">
-                <a>把所有通知标记为已读</a>
-              </li>
-            </ul>
+            <!-- load by js -->
           </li>
           <!-- /.messages-menu -->    
 
@@ -90,5 +60,46 @@
         </ul>
       </div>
     </nav>
-    
-  
+
+    <!-- template -->
+    <script src="../../static/dist/js/template.js"></script>
+    <script src="../../static/js/Message.js"></script>
+
+
+    <script id="message_template" type="text/html">
+
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-envelope-o"></i>
+        <span class="label label-success">{{totalOfUnreadMessage}}</span>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="header">You have {{totalOfUnreadMessage}} messages</li>
+        <li>
+          <!-- inner menu: contains the messages -->
+          {{each noticeList as notice i }}
+          <ul class="menu">
+            <li>
+              <!-- start message -->
+              <a href="#">
+                <div class="pull-left">
+                  <!-- User ImageB -->
+                  <img src="../../static/set/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"></div>
+                <!-- Message title and timestamp -->
+                <h4>
+                  {{notice.sender}} : {{notice.title}}
+                  <small> <i class="fa fa-clock-o"></i>
+                    {{notice.time}}
+                  </small>
+                </h4>
+                <!-- The message -->
+                <p>{{notice.content}}</p>
+              </a>
+            </li>
+            <!-- end message --> </ul>
+          {{/each}}
+          <!-- /.menu --> </li>
+        <li class="footer">
+          <a>把所有通知标记为已读</a>
+        </li>
+      </ul>
+
+    </script>

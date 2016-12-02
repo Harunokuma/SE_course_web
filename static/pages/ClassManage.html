@@ -121,6 +121,127 @@ desired effect
   <script src="../../static/js/ClassManage.js"></script>
 </body>
 
+
+<div class="modal fade" id="classAdd" tabindex="-1" role="dialog" aria-labelledby="classAddLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="classAddLabel">添加班级</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="ClassName">课程名称</label>
+          <input id="ClassName" type="text" class="form-control" placeholder="">
+          <label for="ClassTime">课程时间</label>
+          <input id="ClassTime" type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="studentAdd" tabindex="-1" role="dialog" aria-labelledby="studentAddLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="studentAddLabel">添加学生</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="StudentID">学生学号</label>
+          <input id="StudentID" type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="studentDelete" tabindex="-1" role="dialog" aria-labelledby="studentDeleteLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="studentDeleteLabel">删除学生</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="StudentID-delete">学生学号</label>
+          <input id="StudentID-delete" type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="changeGroup" tabindex="-1" role="dialog" aria-labelledby="changeGroupLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="changeGroupLabel">改变分组</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="Group">组号</label>
+          <input id="Group" type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sendMessage" tabindex="-1" role="dialog" aria-labelledby="sendMessageLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="sendMessageLabel">发送通知</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="Title">标题</label>
+          <input id="Title" type="text" class="form-control" placeholder="">
+          <label for="Content">正文</label>
+          <input id="Content" type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </html>
 <script id="main_template" type="text/html">
   <div class="col-md-12">
@@ -128,7 +249,7 @@ desired effect
       <div class="box-header with-border">
         <h3 class="box-title">班级</h3>
         <div class="box-tools pull-right">
-          <button name="ClasslPlus" type="button" class="btn btn-box-tool"> <i class="fa fa-plus-circle"></i>
+          <button name="ClassPlus" type="button" class="btn btn-box-tool"> <i class="fa fa-plus-circle"></i>
           </button>
           <button type="button" class="btn btn-box-tool" data-widget="collapse"> <i class="fa fa-minus"></i>
           </button>
@@ -164,7 +285,7 @@ desired effect
       <div class="box-header with-border">
         <h3 class="box-title">学生列表</h3>
         <div class="box-tools pull-right">
-          <button name="ClasslPlus" type="button" class="btn btn-box-tool"> <i class="fa fa-plus-circle"></i>
+          <button name="StudentPlus" type="button" class="btn btn-box-tool"> <i class="fa fa-plus-circle"></i>
           </button>
           <button type="button" class="btn btn-box-tool" data-widget="collapse">
             <i class="fa fa-minus"></i>
@@ -199,13 +320,13 @@ desired effect
         </table>
         <br>
         <div class="col-md-4">
-          <button type="button" class="btn btn-block btn-primary">改变分组</button>
+          <button name="ChangeGroup" type="button" class="btn btn-block btn-primary">改变分组</button>
         </div>
         <div class="col-md-4">
-          <button type="button" class="btn btn-block btn-primary">删除学生</button>
+          <button name="StudentDelete" type="button" class="btn btn-block btn-primary">删除学生</button>
         </div>
         <div class="col-md-4">
-          <button type="button" class="btn btn-block btn-primary">发送通知</button>
+          <button name="SendMessage" type="button" class="btn btn-block btn-primary">发送通知</button>
         </div>
       </div>
       <!-- /.box-body -->
@@ -217,6 +338,6 @@ desired effect
   $(function() {
     $("#studentTable").DataTable()
   })
-</script>
+  </script>
 
 </script>
