@@ -22,6 +22,9 @@ $(document).ready(function() {
     else
         pageName = "normal";
 
+    //加载Profile模态框
+    $("html").append("<div id='modal'></div>");
+    $("div#modal").load("../../static/StaticPage/ProfileModal.html");
 
     $("header.main-header").load("../../static/StaticPage/main-header.html", function() {
 
@@ -36,6 +39,8 @@ $(document).ready(function() {
         //打开模态框
         $("#profile").click(function() {
             $("#mymodal").modal();
+            LoadProfile()
+            ChangeProfile()
         });
         
         ModifyPage();
@@ -48,16 +53,59 @@ $(document).ready(function() {
     });
 
     $("footer.main-footer").load("../../static/StaticPage/main-footer.html");
-
-    //加载Profile模态框
-    $("html").append("<div id='modal'></div>");
-    $("div#modal").load("../../static/StaticPage/ProfileModal.html");
 });
 
+function LoadProfile(){
+    var userID = localStorage.getItem("ID")
+    var loadProfile_data = {userID: userID}
 
-$("#test").unbind('click').click(function() {
-    alert(localStorage.getItem("ID"));
-});
+    $.ajax({
+        url: "/api/UserInfo/",
+        type: "post",
+        data: loadProfile_data,
+        dataType: "json",
+        success: function(data){
+            $("#ProfileName").val(data.name)
+            $("#ProfileQues").val(data.question)
+            $("#ProfileAns").val(data.answer)
+            $("#ProfilePass").val(data.password)
+        },
+        error: function(){
+            alert("POST " + "/api/UserInfo/" + " ERROR!")
+        }
+    })
+}
+
+function ChangeProfile(){
+    $("#ChangeProfile").click(function(){
+        var userID = localStorage.getItem("ID")
+        var name = $("#ProfileName").val()
+        var question = $("#ProfileQues").val()
+        var answer = $("#ProfileAns").val()
+        var password = $("#ProfilePass").val()
+        var changeProfile_data = {
+            userID: userID,
+            name: name,
+            question: question,
+            answer: answer,
+            password: password
+        }
+
+        $.ajax({
+            url: "/api/ChangeUserInfo/",
+            type: "post",
+            data: changeProfile_data,
+            dataType: "json",
+            success: function(data){
+                alert("Change profile " + data.result)
+            },
+            error: function(){
+                alert("POST ERROR!")
+            }
+        })
+    })
+}
+
 
 function ModifyPage() {
     identity = localStorage.getItem("Identity");

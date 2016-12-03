@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	data={
+	example_homeworkList_data={
 		classList : [{
 			classID: 'SEM0001',
 			className: 'SEM',
@@ -50,6 +50,27 @@ $(document).ready(function(){
 			}]
 		}]
 	}
+
+	var userID = localStorage.getItem('ID')
+	var homeworkList_data = {userID: userID}
+	$.ajax({
+		url: '/api/HomeworkList/',
+		type: "post",
+		data: homeworkList_data,
+		dataType: "json",
+		success: function(data){
+			template.config('escape', false)
+			$("section.content").html(template('main_template', data))
+		},
+		error: function(){
+			alert("POST " + "/api/HomeworkList/" + " ERROR!")
+		}
+	})
+
+
+
+
+
 	template.config('escape', false)
 	$("section.content").html(template('main_template', data))
 })

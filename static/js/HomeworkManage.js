@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	data={
+	example_homeworkManage_data={
 		classList : [{
 			classID: 'SEM0001',
 			className: 'SEM',
@@ -50,6 +50,25 @@ $(document).ready(function(){
 			}]
 		}]
 	}
-	template.config('escape', false)
-	$("section.content").html(template('main_template', data))
+
+	var userID = localStorage.getItem('ID')
+	var homeworkManage_data = {userID: userID}
+	$.ajax({
+		url: "/api/HomeworkManage/",
+		type: "post",
+		data: homeworkManage_data,
+		dataType: "json",
+		success: function(data){
+			template.config('escape', false)
+			$("section.content").html(template('main_template', data))
+		},
+		error: function(){
+			alert("POST " + "/api/HomeworkManage/" + " ERROR!")
+		}
+	})
+
+
+
+
+
 })

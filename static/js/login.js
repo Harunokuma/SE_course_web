@@ -14,7 +14,7 @@ $("#submit").click(function()
 	};
 	$.ajax({
 		type: 'POST',
-		url: '../../UserVerify/',
+		url: '/api/UserVerify/',
 		data: postdata,
 		dataType: 'json',
 		success: function(data){

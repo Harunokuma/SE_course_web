@@ -83,7 +83,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- AdminLTE App -->
   <script src="../../static/set/dist/js/app.min.js"></script>
   <!-- date-range-picker -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+  <script src="https://cdn.bootcss.com/moment.js/2.11.2/moment.min.js"></script>
   <script src="../../static/set/plugins/daterangepicker/daterangepicker.js"></script>
   <script src="../../static/set/plugins/datepicker/bootstrap-datepicker.js"></script>
   <!-- initial -->
@@ -109,21 +109,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="box-body">
             <div class="form-group">
               <label>作业题目</label>
-              <input type="text" class="form-control" placeholder="Enter ..." value="{{homeworkName}}">
+              <input id="homeworkName" type="text" class="form-control" placeholder="Enter ..." value="{{homeworkName}}">
             </div>
             <!-- textarea -->
             <div class="form-group">
               <label>作业描述</label>
-              <textarea class="form-control" rows="10" placeholder="Enter ..." value=>{{homeworkContent}}</textarea>
+              <textarea id="homeworkContent" class="form-control" rows="10" placeholder="Enter ...">{{homeworkContent}}</textarea>
             </div>
             <div class="form-group">
               <label>选择班级</label>
               <select class="form-control select2" style="width: 100%;">
               {{each classList as cla i}}
               {{if cla.isSelect == 'Y'}}
-                <option selected="selected" itype="{{cla.classID}}">
+                <option selected="selected" data-id="{{cla.classID}}">
               {{else}}
-                <option itype="{{cla.classID}}">
+                <option data-id="{{cla.classID}}">
               {{/if}}
               {{cla.className}} {{cla.classTime}}
               </option>
@@ -143,13 +143,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <button type="button" onclick="UpFile.click()" class="btn btn-default" id="attachment">
                 上传文档
                 <i class="fa fa-arrow-circle-up"></i>
-                <input type="file" id="UpFile" onchange="uploadFile()" style="visibility: hidden; position: absolute;">
+                <input type="file" id="UpFile" style="visibility: hidden; position: absolute;">
               </button>
             </div>
           </div>
           <!-- /.box-body -->
           <div class="box-footer">
-            <button id="test_button" type="submit" class="btn btn-primary pull-right">确认</button>
+            <button id="submitHomeworkCreate" type="button" class="btn btn-primary pull-right">确认</button>
           </div>
         </form>
       </div>

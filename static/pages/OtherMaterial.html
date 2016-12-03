@@ -110,16 +110,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <label for="CourseMaterialName">资料名称</label>
           <input id="CourseMaterialName" type="text" class="form-control">
           <br>
-          <button type="button" onclick="UpImg.click()" class="btn btn-default">
+          <button type="button" onclick="UpFile.click()" class="btn btn-default">
             上传资料
             <i class="fa fa-arrow-circle-up"></i>
-            <input type="file" id="UpImg" onchange="uploadFile()" style="visibility: hidden; position: absolute;">
+            <input type="file" id="UpFile" style="visibility: hidden; position: absolute;">
           </button>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary">保存</button>
+        <button type="button" class="btn btn-primary" id="addCourseMaterial">保存</button>
       </div>
     </div>
   </div>
@@ -155,7 +155,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   {{src.srcName}}
                   <div class="btn-group pull-right">
                     <button itype="{{src.srcUrl}}" type="button" class="btn btn-default">下载</button>
-                    <button itype="{{src.srcUrl}}" type="button" class="btn btn-default">预览</button>
+                    <button target="{{src.srcUrl}}" type="button" class="btn btn-default">预览</button>
                   </div>
                 </a>
               </div>

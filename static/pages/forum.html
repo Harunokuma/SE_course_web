@@ -31,26 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-  <!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
+
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 
@@ -143,19 +124,19 @@ desired effect
       <form role="form">
         <div class="box-body">
           <div class="form-group">
-            <textarea class="form-control" rows="10" placeholder="Enter ..."></textarea>
+            <textarea class="form-control" rows="10" placeholder="Enter ..." id="ForumContent"></textarea>
           </div>
 
         </div>
         <div class="box-footer clearfix">
-          <button type="button" class="pull-right btn btn-default" id="sendEmail">
+          <button type="button" class="pull-right btn btn-default" id="SubmitForum">
             回复
             <i class="fa fa-arrow-circle-right"></i>
           </button>
           <button type="button" onclick="UpFile.click()" class="pull-right btn btn-default" id="attachment">
             上传附件
             <i class="fa fa-arrow-circle-up"></i>
-            <input type="file" id="UpFile" onchange="uploadFile()" style="visibility: hidden; position: absolute;">
+            <input type="file" id="UpFile" style="visibility: hidden; position: absolute;">
           </button>
         </div>
       </form>
@@ -169,7 +150,7 @@ desired effect
 <h1>{{forumsName}}</h1>
 <ol class="breadcrumb">
   <li>
-    <a href="#"> <i class="fa fa-dashboard"></i>
+    <a> <i class="fa fa-dashboard"></i>
       Home
     </a>
   </li>

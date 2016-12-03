@@ -136,7 +136,7 @@ desired effect
             <div class="product-img">
               <img src="../../static/set/dist/img/default-50x50.gif" alt="Product Image"></div>
             <div class="product-info">
-              <a itype="{{area.areaID}}" href="javascript:void(0)" class="product-title">
+              <a href="../BBS?areaID={{area.areaID}}" class="product-title">
                 {{area.areaName}}
               </a>
             </div>
@@ -172,9 +172,9 @@ desired effect
             </thead>
             <tbody>
             {{each forumsList as forums i}}
-            <tr itype="{{forums.forumsID}}">
+            <tr>
               <td>
-                <a href="../forum">{{forums.forumsName}}</a>
+                <a href="../forum?forumID={{forums.forumsID}}">{{forums.forumsName}}</a>
               </td>
               <td>{{forums.userName}}</td>
               <td>{{forums.time}}</td>
@@ -201,22 +201,22 @@ desired effect
         <form role="form">
           <div class="box-body">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="帖子标题"></div>
+              <input id="ForumTitle" type="text" class="form-control" placeholder="帖子标题"></div>
 
             <!-- textarea -->
             <div class="form-group">
-              <textarea class="form-control" rows="10" placeholder="帖子内容"></textarea>
+              <textarea id="ForumContent" class="form-control" rows="10" placeholder="帖子内容"></textarea>
             </div>
           </div>
           <div class="box-footer clearfix">
-            <button type="button" class="pull-right btn btn-default" id="sendEmail">
+            <button type="button" class="pull-right btn btn-default" id="CreateForum">
               发布
               <i class="fa fa-arrow-circle-right"></i>
             </button>
             <button type="button" onclick="UpFile.click()" class="pull-right btn btn-default" id="attachment">
               上传附件
               <i class="fa fa-arrow-circle-up"></i>
-              <input type="file" id="UpFile" onchange="uploadFile()" style="visibility: hidden; position: absolute;">
+              <input type="file" id="UpFile" style="visibility: hidden; position: absolute;">
             </button>
           </div>
         </form>

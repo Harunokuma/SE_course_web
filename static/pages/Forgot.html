@@ -7,13 +7,13 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="../../static/set/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/set/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" >
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../static/set/dist/css/AdminLTE.min.css"></head>
+  <link rel="stylesheet" href="/static/set/dist/css/AdminLTE.min.css"></head>
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
@@ -22,17 +22,29 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">Input your ID to find your password back</p>
+      <p class="login-box-msg" id="tips">Input your ID to reset your password</p>
 
       <!-- <form action="../CourseIntro/" method="get"> -->
       <form>
-        <div class="form-group has-feedback">
-          <input type="userID" class="form-control" placeholder="ID">
+        <div class="form-group has-feedback" id="InputID">
+          <input id="ID" type="text" class="form-control" placeholder="ID">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback" id="Question">
+          <input id="ques" type="text" class="form-control" readonly="readonly">
+          <span class="glyphicon glyphicon-question-sign form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback" id="Answer">
+          <input id="ans" type="text" class="form-control" placeholder="Answer">
+          <span class="glyphicon glyphicon-bullhorn form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback" id="Password">
+          <input id="passwd" type="password" class="form-control">
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
           <div class="col-xs-4 pull-right">
-            <button id="submit" type="submit" class="btn btn-primary btn-block btn-flat">Submit</button>
+            <button name="submit0" type="button" class="btn btn-primary btn-block btn-flat">Submit</button>
           </div>
           <!-- /.col --> </div> 
       </form>
@@ -42,10 +54,10 @@
   <!-- /.login-box -->
 
   <!-- jQuery 2.2.3 -->
-  <script src="../../static/set/plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <script src="/static/set/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <!-- Bootstrap 3.3.6 -->
-  <script src="../../static/set/bootstrap/js/bootstrap.min.js"></script>
-  <!-- login.js -->
-
+  <script src="/static/set/bootstrap/js/bootstrap.min.js"></script>
+  <!-- forgot.js -->
+  <script src="/static/js/forgot.js"></script>
 </body>
 </html>
