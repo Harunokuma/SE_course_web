@@ -29,7 +29,7 @@ function VerifyAnswer(userID, question) {
     $("#Question").css("display", "block")
     $("#Answer").css("display", "block")
     $("#InputID").css("display", "none")
-    $("#Question").val(question)
+    $("#ques").val(question)
     $("[name='submit0']").attr("name", "submit1")
     $("#tips").html("Input your answer to reset your password")
 
