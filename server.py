@@ -12,6 +12,14 @@ def LoadPage(PageName):
 def index():
 	return redirect(url_for('LoadPage', PageName = 'Login'))
 
+
+
+
+
+#UserSystem
+
+
+
 @app.route('/api/UserVerify/', methods=['POST'])
 def UserVerify():
 	print(request.headers)
@@ -35,31 +43,31 @@ def UserVerify():
 
 	return jsonify({'result': result, 'Identity': identity, "Name": "Nemo"})
 
-@app.route('/api/AddCourseintro/', methods=['POST'])
-def AddCourseIntro():
-	file = request.files['img']
-	name = request.form.get('name')
-	file.save(os.path.join('upload', name + '.jpg'))
-	return jsonify({'result': 'success'})
 
-@app.route('/api/Courseintro/', methods=['GET'])
-def CourseIntro():
-	data = jsonify({
-		'introList' : [{
-			'name': 'SEM',
-			'content': 'this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>',
-			'srcOfPic': '../../static/src/neko1.jpg'
-		},{
-			'name': 'SEM1',
-			'content': 'this is SEM',
-			'srcOfPic': '../../static/src/neko2.jpg'
-		},{
-			'name': 'SEM2',
-			'content': 'this is SEM',
-			'srcOfPic': '../../static/src/neko3.jpg'
-		}]
-	})
-	return data
+@app.route('/api/ReturnQuestion/', methods=['POST'])
+def ReturnQuestion():
+    data = jsonify({'question': "whats your name?"})
+    return data
+
+@app.route('/api/TestAnswer/', methods=['POST'])
+def TestAnswer():
+    data = jsonify({'result': "success"})
+    return data
+
+@app.route('/api/ResetPassword/', methods=['POST'])
+def ResetPassword():
+    data = jsonify({'result': "success"})
+    return data
+
+
+
+
+
+
+#MessageSystem
+
+
+
 
 @app.route('/api/CheckMessage/', methods=['POST'])
 def CheckMessage():
@@ -88,6 +96,76 @@ def CheckMessage():
         }]
     })
 	return data
+
+
+@app.route('/api/ReadMessage/', methods=['POST'])
+def ReadMessage():
+    data = jsonify({'result': "success"})
+    return data
+
+
+
+
+#Course and Teacher System
+
+
+@app.route('/api/AddCourseintro/', methods=['POST'])
+def AddCourseIntro():
+	file = request.files['img']
+	name = request.form.get('name')
+	file.save(os.path.join('upload', name + '.jpg'))
+	return jsonify({'result': 'success'})
+
+@app.route('/api/Courseintro/', methods=['GET'])
+def CourseIntro():
+	data = jsonify({
+		'introList' : [{
+			'name': 'SEM',
+			'content': 'this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>',
+			'srcOfPic': '../../static/src/neko1.jpg'
+		},{
+			'name': 'SEM1',
+			'content': 'this is SEM',
+			'srcOfPic': '../../static/src/neko2.jpg'
+		},{
+			'name': 'SEM2',
+			'content': 'this is SEM',
+			'srcOfPic': '../../static/src/neko3.jpg'
+		}]
+	})
+	return data
+
+@app.route('/api/AddTeacherintro/', methods=['POST'])
+def AddTeacherIntro():
+	file = request.files['img']
+	name = request.form.get('name')
+	file.save(os.path.join('upload', name + '.jpg'))
+	return jsonify({'result': 'success'})
+
+@app.route('/api/Teacherintro/', methods=['GET'])
+def TeacherIntro():
+	data = jsonify({
+		'introList' : [{
+			'name': '刘玉生',
+			'content': 'this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>this is SEM<br>',
+			'srcOfPic': '../../static/src/neko1.jpg'
+		},{
+			'name': '邢卫',
+			'content': 'this is SEM',
+			'srcOfPic': '../../static/src/neko2.jpg'
+		},{
+			'name': '金波',
+			'content': 'this is SEM',
+			'srcOfPic': '../../static/src/neko3.jpg'
+		}]
+	})
+	return data
+
+
+
+#Material System
+
+
 
 @app.route('/api/GetCourseMaterial/', methods=['POST'])
 def GetCourseMaterial():
@@ -123,6 +201,12 @@ def GetCourseMaterial():
         }]
         })
     return data
+
+
+
+#Homework System
+
+
 
 @app.route('/api/HomeworkList/', methods=['POST'])
 def HomeworkList():
@@ -306,20 +390,142 @@ def intoReleaseHomework():
         })
     return data
 
-@app.route('/api/ReturnQuestion/', methods=['POST'])
-def ReturnQuestion():
-    data = jsonify({'question': "what's your name?"})
+@app.route('/api/ShowHomeworkEdit/', methods=['POST'])
+def ShowHomeworkEdit():
+    data = jsonify({
+        'homeworkName': 'test name',
+        'homeworkContent': 'test content<br>test content<br>test content<br>test content<br>test content<br>',
+        'DDL': '12/25/2016',
+        'startTime': '12/04/2016',
+        'classList': [{
+            'classID': '00000',
+            'className': 'SEM',
+            'classTime': '周五 345',
+            'isSelect': 'Y'
+        }, {
+            'classID': '00001',
+            'className': 'SER',
+            'classTime': '周三 345',
+            'isSelect': 'N'
+        }, {
+            'classID': '00002',
+            'className': 'SET',
+            'classTime': '周一 345',
+            'isSelect': 'N'
+        }]
+        })
     return data
 
-@app.route('/api/TestAnswer/', methods=['POST'])
-def TestAnswer():
-    data = jsonify({'result': "success"})
+
+
+
+#Class System
+
+
+
+@app.route('/api/ClassManage/', methods=['POST'])
+def ClassManage():
+    data = jsonify({
+        'classList': [{
+            'classID': '00000',
+            'className': 'SEM',
+            'classTime': '周五 345',
+            'teacherName': '刘玉生'
+        }, {
+            'classID': '00001',
+            'className': 'SER',
+            'classTime': '周三 345',
+            'teacherName': '刘玉生'
+        }, {
+            'classID': '00002',
+            'className': 'SET',
+            'classTime': '周一 345',
+             'teacherName': '刘玉生'
+        }]
+        })
     return data
 
-@app.route('/api/ResetPassword/', methods=['POST'])
-def ResetPassword():
-    data = jsonify({'result': "success"})
+
+@app.route('/api/intoClass/', methods=['POST'])
+def IntoClass():
+    data = jsonify({
+        'studentList': [{
+            'studentID': '00000',
+            'name': 'fwy',
+            'group': '3',
+            'score': '100'
+        }, {            'studentID': '00000',
+            'name': 'fwy',
+            'group': '3',
+            'score': '100'
+        }, {            'studentID': '00000',
+            'name': 'fwy',
+            'group': '3',
+            'score': '100'
+        }, {            'studentID': '00000',
+            'name': 'fwy',
+            'group': '3',
+            'score': '100'
+        }]
+        })
     return data
+
+
+
+
+#BBS System
+
+
+@app.route('/api/BBS/', methods=['POST'])
+def BBS():
+    data = jsonify({
+        'areaList': [{
+            'areaID': '00000',
+            'areaName': 'SEM',
+        }, {
+            'areaID': '00010',
+            'areaName': 'SEDM',
+        }],
+        'forumsList': [{
+            'forumsID': '00001',
+            'forumsName': 'xuxuxu',
+            'userName': 'fwy',
+            'time': '12/20/2016',
+            'lastTime': '13/20/2016'
+        }, {
+            'forumsID': '00001',
+            'forumsName': 'xuxuxu',
+            'userName': 'fwy',
+            'time': '12/20/2016',
+            'lastTime': '14/20/2016'
+        }]
+        })
+    return data
+
+
+@app.route('/api/Forum/', methods=['POST'])
+def Forum():
+    data = jsonify({
+        'forumList': [{
+            'userName': '00dsfsd001',
+            'content': 'xuxsagasguxu',
+            'time': '12/20/2016',
+            'url': 'www.baidu.com',
+            'fileName': 'baibu'
+        }, {
+            'userName': '00sdfsdf001',
+            'content': 'xuxusdfsaxu',
+            'time': '12/20/2016',
+            'url': '',
+            'fileName': ''
+        }]
+        })
+    return data
+
+
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -22,7 +22,7 @@ $(document).ready(function() {
     if (pageName.indexOf("CourseIntro") != -1)
         getUrl = "/api/Courseintro/"
     else if (pageName.indexOf("TeacherIntro"))
-        getUrl = "/api/TeacherIntro/"
+        getUrl = "/api/Teacherintro/"
 
     //向服务器请求页面数据
     $.ajax({
