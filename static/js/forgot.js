@@ -16,7 +16,9 @@ $(document).ready(function() {
             	if(data.question == null)
             		alert("not exist ID")
             	else
+            	{
             		VerifyAnswer(userID, data.question)
+            	}
             },
             error: function() {
                 alert("POST " + "/api/ReturnQuestion/" + " ERROR!")
