@@ -26,8 +26,9 @@ $(document).ready(function(){
         dataType: "json",
         success: function(data){
             template.config('escape', false)
-            $("section.content").html(template('main_template', data))
             $("section.content-header").html(template('title_template', data))
+            $("section.content").html(template('main_template', data))
+            
             SubmitForum()
         },
         error:function(){
