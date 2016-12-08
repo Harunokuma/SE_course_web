@@ -218,19 +218,19 @@ def HomeworkList():
             'classTime': '星期五 345',
             'homeworkList':[{
                 'homeworkID': '00000',
-                'homeworkName': 'fuck it',
+                'homeworkName': 'test title',
                 'homeworkContent': 'anything<br>anything',
                 'DDL': '2016-12-20',
                 'status': 'T'
             },{
                 'homeworkID': '00001',
-                'homeworkName': 'fuck it',
+                'homeworkName': 'test title',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'D'
             },{
                 'homeworkID': '00002',
-                'homeworkName': 'fuck it',
+                'homeworkName': 'test title',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'U'
@@ -242,19 +242,19 @@ def HomeworkList():
             'classTime': '星期五 789',
             'homeworkList':[{
                 'homeworkID': '00000',
-                'homeworkName': 'fuck it',
+                'homeworkName': 'test title',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'T'
             },{
                 'homeworkID': '00001',
-                'homeworkName': 'fuck it',
+                'homeworkName': 'test title',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'D'
             },{
                 'homeworkID': '00002',
-                'homeworkName': 'fuck it',
+                'homeworkName': 'test title',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'U'
@@ -305,19 +305,19 @@ def HomeworkManage():
             'classTime': '星期五 345',
             'homeworkList':[{
                 'homeworkID': '00000',
-                'homeworkName': 'fuck it',
+                'homeworkName': 'test title',
                 'homeworkContent': 'anything<br>anything',
                 'DDL': '2016-12-20',
                 'status': 'T'
             },{
                 'homeworkID': '00001',
-                'homeworkName': 'fuck it',
+                'homeworkName': 'test title',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'D'
             },{
                 'homeworkID': '00002',
-                'homeworkName': 'fuck it',
+                'homeworkName': 'test title',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'U'
@@ -329,19 +329,19 @@ def HomeworkManage():
             'classTime': '星期五 789',
             'homeworkList':[{
                 'homeworkID': '00000',
-                'homeworkName': 'fuck it',
+                'homeworkName': 'test title',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'T'
             },{
                 'homeworkID': '00001',
-                'homeworkName': 'fuck it',
+                'homeworkName': 'test title',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'D'
             },{
                 'homeworkID': '00002',
-                'homeworkName': 'fuck it',
+                'homeworkName': 'test title',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'U'
