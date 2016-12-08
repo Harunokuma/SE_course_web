@@ -68,6 +68,8 @@ function CreateForum() {
                 type: "post",
                 data: createForum_data,
                 dataType: "json",
+                processData: false,
+                contentType: false,
                 success: function(data) {
                     alert("Create forum " + data.result)
                     location.reload()

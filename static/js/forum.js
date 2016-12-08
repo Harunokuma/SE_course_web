@@ -54,6 +54,8 @@ function SubmitForum() {
                 type: "post",
                 data: submitForum_data,
                 dataType: "json",
+                processData: false,
+                contentType: false,
                 success: function(data) {
                     alert("Re forum " + data.result)
                     location.reload()
