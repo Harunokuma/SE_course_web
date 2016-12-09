@@ -471,8 +471,6 @@ def IntoClass():
     return data
 
 
-
-
 #BBS System
 
 
