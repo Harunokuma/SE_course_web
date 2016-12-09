@@ -116,9 +116,6 @@ function loadStudent() {
             },
             error: function() {
                 alert("POST " + "/api/intoClass/" + " ERROR!")
-                // template.config('escape', false)
-                // $("div#student_tem").html(template('student_template', example_classManage_data))
-                // loadModal()
             }
         })
     })
@@ -130,7 +127,7 @@ function loadModal() {
         $("#studentAdd").modal();
         $("#submitAddStudent").click(function() {
             var studentID = $("#StudentID").val()
-            var classID = $("stuList").data("id")
+            var classID = $("#stuList").data("id")
             var addStudent_data = { studentID: studentID, classID: classID }
             $.ajax({
                 url: "/api/AddStudent/",
@@ -164,7 +161,7 @@ function loadModal() {
             var studentList = []
             for (var i = 0; i < deleteList.length; i++) {
                 var stu = deleteList[i]
-                studentList.push({ studentID: stu.studentID })
+                studentList.push(stu.studentID)
             }
             var classID = $("#stuList").data("id")
             var deleteStudent_data = { studentList: studentList, classID: classID }
@@ -195,7 +192,7 @@ function loadModal() {
             var studentList = []
             for (var i = 0; i < checkedList.length; i++) {
                 var stu = checkedList[i]
-                studentList.push({ studentID: stu.studentID })
+                studentList.push(stu.studentID)
             }
             var classID = $("#stuList").data("id")
             var group = $("#Group").val()
@@ -225,7 +222,7 @@ function loadModal() {
             var studentList = []
             for (var i = 0; i < checkedList.length; i++) {
                 var stu = checkedList[i]
-                studentList.push({ studentID: stu.studentID })
+                studentList.push(stu.studentID)
             }
             var classID = $("#stuList").data("id")
             var content = $("#Content").val()
