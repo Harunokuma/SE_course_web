@@ -37,11 +37,11 @@ $(document).ready(function() {
     var type = ""
     if (pageName.indexOf("Courseware") != -1)
         type = "Courseware"
-    else if (pageName.indexOf("RefeMaterial"))
+    else if (pageName.indexOf("RefeMaterial") != -1)
         type = "RefeMaterial"
-    else if (pageName.indexOf("MultiMedia"))
+    else if (pageName.indexOf("MultiMedia") != -1)
         type = "MultiMedia"
-    else if (pageName.indexOf("OtherMaterial"))
+    else if (pageName.indexOf("OtherMaterial") != -1)
         type = "OtherMaterial"
 
     var material_data = { userID: userID, type: type }
