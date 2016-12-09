@@ -70,7 +70,7 @@ function MaterialPlus(type) {
         $("#AddModal").modal()
         $("#ClassName").val(name)
         $("#ClassName").data("id", id)
-        $("#addCourseMaterial").click(function(type){
+        $("#addCourseMaterial").click(function(){
             AddMaterial(type)
         })
     })
