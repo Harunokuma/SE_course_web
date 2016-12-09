@@ -66,11 +66,4 @@ $(document).ready(function(){
 			alert("POST " + "/api/HomeworkList/" + " ERROR!")
 		}
 	})
-
-
-
-
-
-	template.config('escape', false)
-	$("section.content").html(template('main_template', data))
 })

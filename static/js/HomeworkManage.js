@@ -66,9 +66,4 @@ $(document).ready(function(){
 			alert("POST " + "/api/HomeworkManage/" + " ERROR!")
 		}
 	})
-
-
-
-
-
 })
