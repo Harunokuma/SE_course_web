@@ -360,7 +360,17 @@ def intoGradeHomework():
         'studentID': '3140100001',
         'studentName': '春天的熊',
         'srcUrl': '#',
-        'srcName': 'part1.pdf'
+        'srcName': 'part1.pdf',
+        'studentList': [{
+            'studentID': "3140103665",
+            'studentName': "xyk",
+            'status': "Undo"
+            },
+            {
+            'studentID': "3140103666",
+            'studentName': "xyk",
+            'status': "Undo"
+            }]
     })
     return data
 

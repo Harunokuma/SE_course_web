@@ -113,9 +113,11 @@ function ModifyPage() {
     if (identity == 'T') //如果用户为老师
     {
         $("#tree-HL").remove();
-        $("#PlusButton").remove();
         $("[name='UserType']").html("Teacher");
     } else if (identity == 'A') {
+        $("#sidebar-HS").remove();
+        $("#PlusButton").remove();
+        $("#sidebar-CM").remove();
         $("[name='UserType']").html("Administrator");
     } else if (identity == 'S') {
         $("#tree-HM").remove();

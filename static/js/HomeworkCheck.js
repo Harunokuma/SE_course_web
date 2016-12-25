@@ -7,12 +7,20 @@ $(document).ready(function(){
 		studentID: '3140100001',
 		studentName: '春天的熊',
 		srcUrl: '#',
-		srcName: 'part1.pdf'
+		srcName: 'part1.pdf',
+		studentList: [{
+			studentID: "3140103665",
+			studentName: "xyk",
+			status: "Undo"
+			}]
 	}
 
 	var homeworkID = getQueryString("homeworkID")
+	var studentID = getQueryString("studentID")
 	var userID = localStorage.getItem("ID")
-	var homeworkCheck_data = {userID: userID, homeworkID: homeworkID}
+	var homeworkCheck_data = {userID: userID,
+							homeworkID: homeworkID,
+							studentID: studentID}
 
 	$.ajax({
 		url: "/api/intoGradeHomework/",
@@ -22,6 +30,7 @@ $(document).ready(function(){
 		success: function(data){
 			template.config('escape', false)
 			$("section.content").html(template('main_template', data))
+			selectStudent()
 			SubmitCheck()
 		},
 		error: function(){
@@ -29,6 +38,15 @@ $(document).ready(function(){
 		}
 	})
 })
+
+function selectStudent(){
+	$("#studentSelect").change(function() {
+		var studentID = $('#studentSelect').val();
+		var homeworkID = getQueryString("homeworkID")
+		window.location.href = "?homeworkID=" + homeworkID + "&studentID=" + studentID
+	})
+	
+}
 
 function SubmitCheck() {
     $("#submitCheck").click(function() {

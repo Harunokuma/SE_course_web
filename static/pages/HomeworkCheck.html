@@ -61,33 +61,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </section>
       <!-- Main content -->
       <section class="content">
-
       </section>
       <!-- /.content -->
-      </div>
-      <!-- /.content-wrapper -->
-      <!-- Main Footer -->
-      <footer class="main-footer">
-        <!--load by js-->
-      </footer>
     </div>
-    <!-- ./wrapper -->
-    <!-- REQUIRED JS SCRIPTS -->
-    <!-- jQuery 2.2.3 -->
-    <script src="../../static/set/plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <!-- Bootstrap 3.3.6 -->
-    <script src="../../static/set/bootstrap/js/bootstrap.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../../static/set/dist/js/app.min.js"></script>
-    <!-- initial -->
-    <script src="../../static/js/initial.js"></script>
-    <!-- template -->
-    <script src="../../static/dist/js/template.js"></script>
-    <script src="../../static/js/HomeworkCheck.js"></script>
+    <!-- /.content-wrapper -->
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <!--load by js-->
+    </footer>
+  </div>
+  <!-- ./wrapper -->
+  <!-- REQUIRED JS SCRIPTS -->
+  <!-- jQuery 2.2.3 -->
+  <script src="../../static/set/plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <!-- Bootstrap 3.3.6 -->
+  <script src="../../static/set/bootstrap/js/bootstrap.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../../static/set/dist/js/app.min.js"></script>
+  <!-- initial -->
+  <script src="../../static/js/initial.js"></script>
+  <!-- template -->
+  <script src="../../static/dist/js/template.js"></script>
+  <script src="../../static/js/HomeworkCheck.js"></script>
 </body>
 
 </html>
-
 <script id="main_template" type="text/html">
   <div class="row">
     <div class="col-md-12">
@@ -107,6 +105,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         <!-- /.box-header -->
         <div class="box-body">
+          <div class="form-group">
+            <label>选择同学</label>
+            <select class="form-control select2" style="width: 100%;" id="studentSelect">
+              {{each studentList as stL i}} 
+              {{if stL.studentID == studentID}}
+              <option selected="selected" value="{{stL.studentID}}">
+              {{else}}
+              <option value="{{stL.studentID}}">
+              {{/if}} 
+              {{stL.studentID}} {{stL.studentName}} {{stL.status}}
+              </option>
+              {{/each}}
+            </select>
+          </div>
           <table class="table table-bordered">
             <tr>
               <th>学号</th>
