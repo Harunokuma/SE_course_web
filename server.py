@@ -218,19 +218,19 @@ def HomeworkList():
             'classTime': '星期五 345',
             'homeworkList':[{
                 'homeworkID': '00000',
-                'homeworkName': 'test title',
+                'homeworkName': 'test title1',
                 'homeworkContent': 'anything<br>anything',
                 'DDL': '2016-12-20',
                 'status': 'T'
             },{
                 'homeworkID': '00001',
-                'homeworkName': 'test title',
+                'homeworkName': 'test title2',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
-                'status': 'D'
+                'status': 'T'
             },{
                 'homeworkID': '00002',
-                'homeworkName': 'test title',
+                'homeworkName': 'test title3',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'U'
@@ -242,19 +242,19 @@ def HomeworkList():
             'classTime': '星期五 789',
             'homeworkList':[{
                 'homeworkID': '00000',
-                'homeworkName': 'test title',
+                'homeworkName': 'test title1',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'T'
             },{
                 'homeworkID': '00001',
-                'homeworkName': 'test title',
+                'homeworkName': 'test title2',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'D'
             },{
                 'homeworkID': '00002',
-                'homeworkName': 'test title',
+                'homeworkName': 'test title3',
                 'homeworkContent': 'anything<br>anything<br>anything<br>anything<br>anything<br>',
                 'DDL': '2016-12-20',
                 'status': 'U'
@@ -385,17 +385,14 @@ def intoReleaseHomework():
             'classID': '00000',
             'className': 'SEM',
             'classTime': '周五 345',
-            'isSelect': 'Y'
         }, {
             'classID': '00001',
             'className': 'SER',
             'classTime': '周三 345',
-            'isSelect': 'N'
         }, {
             'classID': '00002',
             'className': 'SET',
             'classTime': '周一 345',
-            'isSelect': 'N'
         }]
         })
     return data

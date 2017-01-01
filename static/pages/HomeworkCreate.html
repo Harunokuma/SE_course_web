@@ -120,11 +120,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <label>选择班级</label>
               <select class="form-control select2" style="width: 100%;">
               {{each classList as cla i}}
-              {{if cla.isSelect == 'Y'}}
-                <option selected="selected" data-id="{{cla.classID}}">
-              {{else}}
                 <option data-id="{{cla.classID}}">
-              {{/if}}
               {{cla.className}} {{cla.classTime}}
               </option>
               {{/each}}
