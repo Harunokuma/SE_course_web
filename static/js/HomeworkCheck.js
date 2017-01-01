@@ -17,6 +17,9 @@ $(document).ready(function(){
 
 	var homeworkID = getQueryString("homeworkID")
 	var studentID = getQueryString("studentID")
+	if(studentID === null){
+		studentID = "0"
+	}
 	var userID = localStorage.getItem("ID")
 	var homeworkCheck_data = {userID: userID,
 							homeworkID: homeworkID,
@@ -78,8 +81,6 @@ function SubmitCheck() {
 		})
     })
 }
-
-
 
 //获取地址参数
 function getQueryString(name) {
