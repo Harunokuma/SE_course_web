@@ -177,7 +177,7 @@ def GetCourseMaterial():
             'classTime': '星期五 345',
             'srcList': [{
                 'srcName': 'ch1',
-                'srcUrl': 'test_url',
+                'srcUrl': '../../static/js/CourseMaterial.js',
                 'urlOfPic': '../../static/set/dist/img/default-50x50.gif'
             }, {
                 'srcName': 'ch2',
