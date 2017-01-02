@@ -48,21 +48,15 @@ $(document).ready(function() {
                 data.startTime = "1/1/2016"
                 data.DDL = "1/1/2016"
             }
-            data.homeworkContent = data.homeworkContent.replace(/<br>/g, "\n")
+            if(data.homeworkContent !== undefined){
+            	data.homeworkContent = data.homeworkContent.replace(/<br>/g, "\n")
+        	}
             template.config('escape', false)
             $("section.content").html(template('main_template', data))
             submitHomeworkCreate()
         },
         error: function() {
             alert("POST " + homeworkCreate_url + " ERROR!")
-            if (mode == null) {
-                example_homeworkCreate_data.startTime = "1/1/2016"
-                example_homeworkCreate_data.DDL = "1/1/2016"
-            }
-            data.homeworkContent = data.homeworkContent.replace(/<br>/g, "\n")
-            template.config('escape', false)
-            $("section.content").html(template('main_template', example_homeworkCreate_data))
-            submitHomeworkCreate()
         }
     })
 })

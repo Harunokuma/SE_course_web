@@ -54,11 +54,18 @@ function selectStudent(){
 function SubmitCheck() {
     $("#submitCheck").click(function() {
     	var teacherID = localStorage.getItem("ID")
-    	var studentID = $(this).data("studentID")
+    	var studentID = $(this).data("id")
     	var homeworkID = getQueryString("homeworkID")
     	var grade = $("#score").val()
-    	var remark = $("#commet").val()
+    	var remark = $("#comment").val()
 
+    	if(grade === undefined){
+    		grade = ""
+    	}
+    	if(remark === undefined){
+    		remark = ""
+    	}
+    	
     	var submitCheck_data = {
     		teacherID: teacherID,
     		studentID: studentID,
