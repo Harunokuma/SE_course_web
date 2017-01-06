@@ -998,7 +998,7 @@ def intoGradeHomework():
         studentName = cursor.fetchall()
         studentName = studentName[0][0]
 
-    cursor.execute('select classID from homework_Info where homeworkID = %s', (homeworkID))
+    cursor.execute('select classID from homework_info where homeworkID = %s', (homeworkID))
     classID = cursor.fetchall()
     classID = classID[0][0]
 
