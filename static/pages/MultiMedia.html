@@ -148,8 +148,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a class="product-title">
                   {{src.srcName}}
                   <div class="btn-group pull-right">
-                    <button itype="{{src.srcUrl}}" type="button" class="btn btn-default">下载</button>
-                    <button target="{{src.srcUrl}}" type="button" class="btn btn-default">预览</button>
+                    <a href="{{src.srcUrl}}" download="{{src.srcName}}">
+                    <button type="button" class="btn btn-default">下载</button>
+                  </a>
+                  <a href="{{src.srcUrl}}" target="view-window">
+                    <button type="button" class="btn btn-default">预览</button>
+                  </a>
                   </div>
                 </a>
               </div>

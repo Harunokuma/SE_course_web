@@ -118,9 +118,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             <div class="form-group">
               <label>选择班级</label>
-              <select class="form-control select2" style="width: 100%;">
+              <select class="form-control select2" style="width: 100%;" id="classSelect">
               {{each classList as cla i}}
-                <option data-id="{{cla.classID}}">
+              {{if cla.isSelect == 'Y'}}
+                <option selected="selected" value="{{cla.classID}}">
+              {{else}}
+                <option value="{{cla.classID}}">
+              {{/if}}
               {{cla.className}} {{cla.classTime}}
               </option>
               {{/each}}
@@ -145,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <!-- /.box-body -->
           <div class="box-footer">
-            <button id="submitHomeworkCreate" type="button" class="btn btn-primary pull-right">确认</button>
+            <button id="submitCreate" type="button" class="btn btn-primary pull-right">确认</button>
           </div>
         </form>
       </div>

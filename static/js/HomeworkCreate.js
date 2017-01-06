@@ -63,13 +63,13 @@ $(document).ready(function() {
 
 //确认作业的发布
 function submitHomeworkCreate() {
-    $("#submitHomeworkCreate").click(function() {
+    $("#submitCreate").click(function() {
         var mode = getQueryString("mode")
         var userID = localStorage.getItem("ID")
         var homeworkID
         var name = $("#homeworkName").val()
         var content = $("#homeworkContent").val()
-        var classID = $("option[selected='selected']").data("id")
+        var classID = $("#classSelect").val()
         var time = $("#reservationtime").val()
         time = time.split(" - ")
         var startTime = time[0]
